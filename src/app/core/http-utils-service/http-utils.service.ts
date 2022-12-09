@@ -1,30 +1,30 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Injectable} from '@angular/core';
+import {Observable} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class HttpUtilsService {
 
-  AUTH_TOKEN: string  = 'auth_token';
+  AUTH_TOKEN: string = 'auth_token';
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
   }
 
-  get(url: string): Observable<any> {
+  public get(url: string): Observable<any> {
     return this.http.get(url, this.prepareHeaders());
   }
 
-  post(url: string, body: any): Observable<any>{
+  public post(url: string, body: any): Observable<any> {
     return this.http.post(url, body, this.prepareHeaders());
   }
 
-  put(url: string, body: any): Observable<any>{
+  public put(url: string, body: any): Observable<any> {
     return this.http.put(url, body, this.prepareHeaders());
   }
 
-  delete(url: string): Observable<any>{
+  public delete(url: string): Observable<any> {
     return this.http.delete(url, this.prepareHeaders());
   }
 
