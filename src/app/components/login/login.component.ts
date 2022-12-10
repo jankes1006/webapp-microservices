@@ -26,8 +26,6 @@ export class LoginComponent implements OnInit {
 
   login() {
     const {username, password} = this.model;
-    if (username && password) {
-      this.authService.login(username, password);
-    }
+    this.authService.login(username, password);
   }
 }
