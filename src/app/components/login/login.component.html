@@ -1,0 +1,15 @@
+<div class="form-style">
+  <form (submit)="login()" #loginForm="ngForm">
+    <div class="form-group">
+      <input type="text" [(ngModel)]="model.username" name="username" placeholder="{{USERNAME_PLACEHOLDER}}">
+    </div>
+    <div class="form-group">
+      <input type="password" [(ngModel)]="model.password" name="password" placeholder="{{PASSWORD_PLACEHOLDER}}">
+    </div>
+    <div class="form-group">
+      <button type="submit" [disabled]="!loginForm.form.valid">{{LOGIN_BUTTON}}</button>
+    </div>
+    <a>{{RECOVER_PASSWORD}}</a>
+  </form>
+</div>
+
